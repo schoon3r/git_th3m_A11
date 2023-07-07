@@ -1,11 +1,17 @@
 #!/usr/bin/env python3
 
 import os
+import sys
 from bs4 import BeautifulSoup
 from openpyxl import Workbook
 
-# Directory containing the HTML files
-html_directory = "X:/Downloads/Untitled design (1)/"
+# Check if the html_directory argument is provided
+if len(sys.argv) < 2:
+    print("Please provide the directory containing the HTML files.")
+    sys.exit(1)
+
+# Get the html_directory from the command-line argument
+html_directory = sys.argv[1]
 
 # Create a new workbook
 workbook = Workbook()
